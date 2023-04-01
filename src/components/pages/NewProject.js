@@ -21,7 +21,7 @@ function NewProject() {
             .then((data)=>{//pega os dados e armazena no hook
                 console.log(data)
                 //redirect
-                history.push('/projects',{massage: 'Projeto criado com sucesso'})
+                history.push('/projects',{message: 'Projeto criado com sucesso'})
             })
             .catch((err)=>console.log(err)
         )

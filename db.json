@@ -10,6 +10,64 @@
       "cost": 0,
       "services": [],
       "id": 1
+    },
+    {
+      "name": "teste",
+      "budget": "200",
+      "category": {
+        "id": "2",
+        "name": "Dev"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 2
+    },
+    {
+      "name": "Projeto teste",
+      "budget": "5000",
+      "category": {
+        "id": "3",
+        "name": "Design"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 3
+    },
+    {
+      "name": "teste",
+      "budget": "5013",
+      "cost": 0,
+      "services": [],
+      "id": 4
+    },
+    {
+      "name": "Projeto teste",
+      "budget": "544",
+      "category": {
+        "id": "4",
+        "name": "Planning"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 5
+    },
+    {
+      "name": "Projeto teste",
+      "budget": "1345",
+      "category": {
+        "id": "2",
+        "name": "Dev"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 6
+    },
+    {
+      "name": "Projeto teste",
+      "budget": "5415165",
+      "cost": 0,
+      "services": [],
+      "id": 7
     }
   ],
   "categories": [
