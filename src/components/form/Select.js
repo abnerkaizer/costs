@@ -8,7 +8,7 @@ function Select({text,name,options,handledOnChange,value}) {
                 name={name} 
                 id={name}
                 onChange={handledOnChange}
-                value={value}
+                value={value || ''}
             >
                 <option disabled selected>Selecione uma opção</option>
                 {options.map((option)=>(
