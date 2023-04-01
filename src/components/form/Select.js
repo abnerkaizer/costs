@@ -11,6 +11,9 @@ function Select({text,name,options,handledOnChange,value}) {
                 value={value}
             >
                 <option disabled selected>Selecione uma opção</option>
+                {options.map((option)=>(
+                    <option value={option.id} key={option.id}>{option.name}</option>
+                ))}
             </select> 
         </div>
     )
