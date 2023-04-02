@@ -7,8 +7,21 @@
         "id": "4",
         "name": "Planning"
       },
-      "cost": 0,
-      "services": [],
+      "cost": 544,
+      "services": [
+        {
+          "name": "Contratar Dev",
+          "cost": "500",
+          "description": "Criar função de enviar emails.",
+          "id": "b82b1d02-b903-437f-ba25-5948f3888b5c"
+        },
+        {
+          "name": "AWS",
+          "cost": "44",
+          "description": "Hospedagem",
+          "id": "246d1fea-cf8e-42e8-840b-73ed78cb7eb6"
+        }
+      ],
       "id": 5
     },
     {
