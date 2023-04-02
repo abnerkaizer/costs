@@ -1,47 +1,10 @@
 {
   "projects": [
     {
-      "name": "Projeto teste",
-      "budget": "544",
-      "category": {
-        "id": "4",
-        "name": "Planning"
-      },
-      "cost": 544,
-      "services": [
-        {
-          "name": "Contratar Dev",
-          "cost": "500",
-          "description": "Criar função de enviar emails.",
-          "id": "b82b1d02-b903-437f-ba25-5948f3888b5c"
-        },
-        {
-          "name": "AWS",
-          "cost": "44",
-          "description": "Hospedagem",
-          "id": "246d1fea-cf8e-42e8-840b-73ed78cb7eb6"
-        }
-      ],
-      "id": 5
-    },
-    {
       "name": "Projeto",
       "budget": "8000",
-      "cost": 5000,
-      "services": [
-        {
-          "name": "AWS",
-          "cost": "2000",
-          "description": "Hospedagem",
-          "id": "b973335d-2a59-4ef1-9353-3f1688bfa5fa"
-        },
-        {
-          "name": "OracleDB",
-          "cost": "3000",
-          "description": "License for OracleDB",
-          "id": "408bd31e-d005-4a43-905b-49d8fe0ea26b"
-        }
-      ],
+      "cost": 0,
+      "services": [],
       "id": 7,
       "category": {
         "id": "3",

@@ -97,8 +97,29 @@ function Project() {
         })
         .catch((err)=>console.log(err))
     }
-    function removeService() {
+    function removeService(id, cost) {
+        const servicesUpdated = project.services.filter(
+            (service) => service.id !== id
+        )
+        const projectUpdated = project
+        projectUpdated.services = servicesUpdated
+        projectUpdated.cost = parseFloat(projectUpdated.cost) - parseFloat(cost)
         
+        fetch(`http://localhost:5000/projects/${projectUpdated.id}`,{//request à api
+        method: 'PATCH',//metodo patch só muda o que for mandado.
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(projectUpdated) 
+        })
+        .then((resp)=> resp.json())//pegou a resposta transformou em json
+        .then(()=>{//pega os dados e armazena no hook
+            setProject(projectUpdated)
+            setServices(servicesUpdated)
+            setMessage('Serviço removido!')
+            setType('success')
+        })
+        .catch((err)=>console.log(err))
     }
     return(
         <>
