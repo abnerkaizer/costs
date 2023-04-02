@@ -1,3 +1,4 @@
+import {v4 as uuidv4} from 'uuid'
 import { useParams } from 'react-router-dom'
 import styles from './Project.module.css'
 import { useEffect, useState } from 'react'
@@ -5,6 +6,7 @@ import Loading from '../layout/Loading'
 import Container from '../layout/Container'
 import Message from '../layout/Message'
 import ProjectForm from '../project/ProjectForm'
+import ServiceForm from    '../service/ServiceForm'
 
 function Project() {
     const {id} = useParams()
@@ -30,7 +32,42 @@ function Project() {
         })
         .catch((err)=>console.log(err))
     },[id])
+    function createService(project) {
+        setMessage('')
+        //last service
+        const lastService = project.services[project.services.length -1]
+        lastService.id = uuidv4()//cria um id unico
+        const lastServiceCost = lastService.cost
+        const newCost = parseFloat(project.cost) + parseFloat(lastServiceCost)
+        //maximun value validation
+        if (newCost > parseFloat(project.budget)) {
+            setMessage('Orçamento ultrapassado, verifique o valor do serviço')
+            setType('error')
+            project.services.pop()
+            return false
+        }
+        //add service cost to project
+        project.cost = newCost
 
+        //update project
+        fetch(`http://localhost:5000/projects/${project.id}`,{//request à api
+        method: 'PATCH',//metodo patch só muda o que for mandado.
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(project) 
+        })
+        .then((resp)=> resp.json())//pegou a resposta transformou em json
+        .then((data)=>{//pega os dados e armazena no hook
+            setProject(data)
+            toggleServiceForm()
+            setMessage('Projeto atualizado!')
+            setType('success')
+            setRemoveLoading(true)
+        })
+        .catch((err)=>console.log(err))
+
+    }
     function toggleProjectForm() {
         setShowProjectForm(!showProjectForm)
     }
@@ -98,7 +135,11 @@ function Project() {
                             </button>
                             <div className={styles.project_info} >
                                 {showServiceForm && (
-                                    <div>Formulário do serviço</div>
+                                    <ServiceForm
+                                        handleSubmit={createService}
+                                        textButton="Adicionar serviço"
+                                        projecData={project}
+                                    />
                                 )
 
                                 }

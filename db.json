@@ -14,8 +14,21 @@
     {
       "name": "Projeto",
       "budget": "8000",
-      "cost": 0,
-      "services": [],
+      "cost": 5000,
+      "services": [
+        {
+          "name": "AWS",
+          "cost": "2000",
+          "description": "Hospedagem",
+          "id": "b973335d-2a59-4ef1-9353-3f1688bfa5fa"
+        },
+        {
+          "name": "OracleDB",
+          "cost": "3000",
+          "description": "License for OracleDB",
+          "id": "408bd31e-d005-4a43-905b-49d8fe0ea26b"
+        }
+      ],
       "id": 7,
       "category": {
         "id": "3",
