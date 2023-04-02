@@ -12,11 +12,15 @@
       "id": 5
     },
     {
-      "name": "Projeto teste",
-      "budget": "5415165",
+      "name": "Projeto",
+      "budget": "28000",
       "cost": 0,
       "services": [],
-      "id": 7
+      "id": 7,
+      "category": {
+        "id": "3",
+        "name": "Design"
+      }
     }
   ],
   "categories": [
